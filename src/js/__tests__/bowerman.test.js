@@ -19,7 +19,7 @@ test('correct health', () => {
   expect(() => deadMen.levelUp()).toThrow(new Error("Dead"));
 });
 
-test('test levelUp', () => {
+test('levelUp', () => {
   const bowerman = new Bowerman('bowman');
   bowerman.levelUp();
   const result = {
@@ -28,7 +28,7 @@ test('test levelUp', () => {
   expect(bowerman).toEqual(result);
 });
 
-test('test levelUp умершего', () => {
+test('levelUp умершего', () => {
   expect(() => {
     const bowerman = new Bowerman('bowman');
     bowerman.health = 0;
@@ -36,7 +36,7 @@ test('test levelUp умершего', () => {
   }).toThrow(new Error('Dead'));
 });
 
-test('test damage', () => {
+test('damage', () => {
   const bowerman = new Bowerman('bowman');
   bowerman.damage(10);
   const result = {
@@ -45,7 +45,7 @@ test('test damage', () => {
   expect(bowerman).toEqual(result);
 });
 
-test('test damage health is 0', () => {
+test('damage health is 0', () => {
   const bowerman = new Bowerman('bowman');
   bowerman.damage(150);
   const result = {
@@ -54,7 +54,7 @@ test('test damage health is 0', () => {
   expect(bowerman).toEqual(result);
 });
 
-test('test damage health < 0', () => {
+test('damage health < 0', () => {
   const bowerman = new Bowerman('bowman');
   bowerman.health = -5;
   bowerman.damage(10);
